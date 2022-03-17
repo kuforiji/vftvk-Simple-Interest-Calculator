@@ -1,16 +1,46 @@
-<html>
-    <head>
-    <script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+    <title>Web App – Simple Interest Calculator</title>
+</head>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+<body>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+    <div class="calculator">
+        <div class="container">
+            <h1>Simple Interest Calculator</h1>
+            <form class="formulario">
+                <div class="form_inputs">
+                    <label id="label_amount" for="amount">Amount</label>
+                    <input id="amount" name="amount" type="number" id="principal">
+
+                    <label id="label_rate" for="rate">Rate</label>
+                    <div class="container_rate">
+                        <input id="rate" name="rate" type="range" id="rate" min="1" max="20" onchange="updateRateValue(this.value);">
+                        <output id="output_rate">10%</output>
+                    </div>
+
+                    <label id="label_years" for="years">No. of Years</label>
+                    <input id="years" name="years" type="number" id="years">
+
+                    <label for="">Interest :</label>
+                    <span id="result"></span>
+                </div>
+
+                <button type="submit">Compute</button>
+            </form>
+            <h3>&#169; This Calculator belongs to John Inioluwa Adeyinka</h3>
+        </div>
+
+        <button id="again">AGAIN</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
